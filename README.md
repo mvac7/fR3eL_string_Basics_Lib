@@ -95,7 +95,7 @@ You can find them in the [`examples/`](examples/) folder.
 
 Example where all the functions of the _string_Basics_ library are tested in the ROM environment.
 
-[`examples/Example01`](examples/Test01)
+[`examples/Test01`](examples/Test01)
 
 ![Example screenshot](docs/pics/Test01_01.png) 
 ![Example screenshot](docs/pics/Test01_02.png) 

@@ -277,12 +277,12 @@ text=`dolor sit amet`
 
 #### Example:
 ```c
-	char stringLine[20];
+	char stringLine[40];
 	STRING(stringLine,40,'-');
 ```
 
 #### Result:
-text=`--------------------`
+text=`----------------------------------------`
 
 
 <br/>
@@ -310,7 +310,7 @@ And you need the following applications to compile and generate the final ROM:
 
 <br/>
 
-![Example screenshot](pics/EXAMPLE01_01.png)
+![Example screenshot](pics/Example01_01.png)
 
 <br/>
 
