@@ -108,5 +108,5 @@ Example where all the functions of the _string_Basics_ library are tested in the
 ## References
 
 - Wikipedia · [C String Handling](https://en.wikipedia.org/wiki/C_string_handling)
-- [C Programming](https://en.wikibooks.org/wiki/C_Programming) · [String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
+- Wikibooks · [C Programming](https://en.wikibooks.org/wiki/C_Programming) · [String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
 - w3schools · [C Strings](https://www.w3schools.com/c/c_strings.php)
