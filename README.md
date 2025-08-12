@@ -1,33 +1,31 @@
 # String Basics SDCC Library (fR3eL project)
 
 <table>
+<tr><td>Name</td><td>string_Basics</td></tr>
 <tr><td>Architecture</td><td>MSX</td></tr>
-<tr><td>Format</td><td>C Object (SDCC .rel)</td></tr>
+<tr><td>Environment</td><td>ROM, MSX BASIC or MSX-DOS</td></tr>
+<tr><td>Format</td><td>SDCC Relocatable object file (.rel)</td></tr>
 <tr><td>Programming language</td><td>C and Z80 assembler</td></tr>
-<tr><td>Compiler</td><td>SDCC v4.4 or newer</td></tr>
+<tr><td>Compiler</td><td>SDCC v4.4</td></tr>
 </table>
 
 ---
 
 ## Description
 
-Library with basic functions for the managing C Strings (array of characters) and functions similar to those of the MSX BASIC.
+C function library with basic functions for the managing C Strings.
+Include functions similar to those of the MSX BASIC.
 
-**Warning:** To optimize resources, it only accepts strings with a maximum length of 255 characters, except for the __StrCopy__ and __StrConcatenate__ functions.
-If you need to work with larger strings, you can change the input values of type __char__ to __unsigned int__.
-
-Remember that if you don't find the functions you need, you can use the C String standard library.
+You can use this library to develop applications for ROM, MSXBASIC or MSX-DOS environments, using the Small Device C Compiler [(SDCC)](http://sdcc.sourceforge.net/) cross compiler.
 
 You can access the documentation here with [`How to use the library`](docs/HOWTO.md).
 
 In the source code [`examples/`](examples/), you can find applications for testing and learning purposes.
 
-This project is an Open Source library. 
+These libraries are part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
+
+This project is open source under the [MIT license](LICENSE).
 You can add part or all of this code in your application development or include it in other libraries/engines.
-
-Use them for developing MSX applications using Small Device C Compiler [`SDCC`](http://sdcc.sourceforge.net/).
-
-This library is part of the [MSX fR3eL Project](https://github.com/mvac7/SDCC_MSX_fR3eL).
 
 Enjoy it!
 
@@ -36,6 +34,8 @@ Enjoy it!
 ---
 
 ## History of versions
+(dd/mm/yyyy)
+
 - v1.2 (12/ 1/2025) Update to SDCC (4.1.12) Z80 calling conventions
 - v1.1 (20/12/2023) Rename some functions and remove SPACE
 - v1.0 (24/07/2018)< First version 
@@ -54,27 +54,59 @@ Enjoy it!
 
 ---
 
-## Functions
+## Quick Function Guide
 
-### Functions similar to some functions from C String standard library
+See the [How to](docs/HOWTO.md) document for more information and examples.
 
-| Function | Description |
-| :---     | :---        |
-| char **StrLength**(char* source) | Returns the length of a string |
-| **StrCopy**(char* target, char* source) | Copy the source string on the target string |
-| **StrConcatenate**(char* target, char* source) | Appends a copy of the source string to the target string |
-| boolean **StrCompare**(char* string1, char* string2) | Compare two strings |
+### Functions similar to those in the C standard string library
+
+| Name  | Declaration  | Output | Description |
+| :---  | :---         | :---   | :---        |
+| StrLength | `StrLength(text)` | `char` | Returns the length of a string |
+| StrCopy | `StrCopy(targetString, sourceString)` | - | Copy the source string on the target string |
+| StrConcatenate | `StrConcatenate(targetString, sourceString)` | - | Appends a copy of the source string to the target string |
+| StrCompare | `StrCompare(string1, string2) ` | defined type `boolean` | Compare two strings |
 
 <br/>
 
 ### Functions similar to MSX BASIC instructions:
 
-| Function | Description |
-| :---     | :---        |
-| **LEFT**(char* target, char* source, char length) | Returns a section of the source string with the given length. |
-| **RIGHT**(char* target, char* source, char rightLength) | Returns a section to the right of the source string with the given length. |
-| **MID**(char* target, char* source, char leftPos, char length) | Returns a section of the source string from the given position and length. |
-| char **INSTR**(char* source, char asciicode, char offset) | Find the first occurrence of a character in the given string. |
-| **STRING**(char* target, char length, char asciicode) | Generates a string, composed with same char. |
+| Name   | Declaration  | Output | Description |
+| :---   | :---         | :---   | :---        |
+| LEFT   | `LEFT(targetString, sourceString, length)` | -      | Returns a section of the source string with the given length |
+| RIGHT  | `RIGHT(targetString, sourceString, rightLength)`    | - | Returns a section to the right of the source string with the given length |
+| MID    | `MID(targetString, sourceString, leftPos, length)`  | - | Returns a section of the source string from the given position and length |
+| INSTR  | `INSTR(sourceString, ASCIIcode, offset)`   | `char` | Find the first occurrence of a character in the given string |
+| STRING | `STRING(targetString, length, ASCIIcode)`  | -      | Generates a string, composed with same char |
 
+<br/>
 
+---
+
+## Code Examples
+
+The project includes several examples that I have used to test the library and that can help you learn how to use this library.
+
+You can find them in the [`examples/`](examples/) folder.
+
+<br/>
+
+### Example 1
+
+Example where all the functions of the _string_Basics_ library are tested in the ROM environment.
+
+[`examples/Test01`](examples/Test01)
+
+![Example screenshot](docs/pics/Test01_01.png) 
+![Example screenshot](docs/pics/Test01_02.png) 
+![Example screenshot](docs/pics/Test01_03.png) 
+
+<br/>
+
+---
+
+## References
+
+- Wikipedia · [C String Handling](https://en.wikipedia.org/wiki/C_string_handling)
+- Wikibooks · [C Programming](https://en.wikibooks.org/wiki/C_Programming) · [String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
+- w3schools · [C Strings](https://www.w3schools.com/c/c_strings.php)

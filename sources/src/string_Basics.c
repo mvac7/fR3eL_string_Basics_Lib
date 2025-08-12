@@ -1,16 +1,18 @@
 /* =============================================================================
-String Basics Functions SDCC Library (fR3eL Project)
-Version: 1.2 (12/1/2025)
-Author: mvac7/303bcn
-Architecture: MSX
-Format: C object (SDCC .rel)
-Programming language: C
-Compiler: SDCC 4.4 or newer
+# String Basics Functions SDCC Library (fR3eL Project)
+
+- Version: 1.2 (12/1/2025)
+- Author: mvac7/303bcn
+- Architecture: MSX
+- Environment: ROM, MSX-DOS or BASIC
+- Format: SDCC Relocatable object file (.rel)
+- Programming language: C
+- Compiler: SDCC 4.4
 
 fR3eL Project
 https://github.com/mvac7/SDCC_MSX_fR3eL
 
-Description:
+## Description:
 	Selection of functions for managing C Strings (array of characters). 
 	Includes functions similar to those of MSX BASIC.
 	
@@ -21,7 +23,7 @@ Description:
 			 maximum length of 256 characters, except for the 
 			 StrCopy and StrConcatenate functions.
 
-History of versions:
+## History of versions: (dd/mm/yyyy)
 - v1.2 (12/ 1/2025) Update to SDCC (4.1.12) Z80 calling conventions
 - v1.1 (20/12/2023) Rename some functions and remove SPACE
 - v1.0 (24/07/2018) first version
@@ -34,11 +36,12 @@ History of versions:
 
 
 /* =============================================================================
-	StrLength (same as strlen)
-
-	Function:	Returns the length of a string 
-	Input:		[char*] string       
-	Output:		[char] length 
+StrLength
+Description:	
+		Returns the length of a string 
+		(same as strlen)
+Input:	[char*] string       
+Output:	[char] length 
 ============================================================================= */
 char StrLength(char* source)
 {
@@ -50,11 +53,13 @@ char StrLength(char* source)
 
 
 /* =============================================================================
-	StrCopy (same as strcpy)
-	Function:	Copy the source string on the target string. 
-	Input:		[char*] target string
-				[char*] source string        
-	Output:		-  
+StrCopy
+Description:
+		Copy the source string on the target string. 
+		(same as strcpy)
+Input:	[char*] target string
+		[char*] source string        
+Output:	-  
 ============================================================================= */
 void StrCopy(char* target, char* source) 
 {
@@ -64,13 +69,14 @@ void StrCopy(char* target, char* source)
 
 
 /* =============================================================================
-	StrConcatenate (same as strcat)
-
-	Function:	Concatenate a copy of the source string to the destination string.
-				target = target + source 
-	Input:		[char*] target string
-				[char*] source string          
-	Output:		-  
+StrConcatenate
+Description:
+		Concatenate a copy of the source string to the destination string.
+		(same as strcat)
+		target = target + source 
+Input:	[char*] target string
+		[char*] source string          
+Output:	-  
 ============================================================================= */
 void StrConcatenate(char* target, char* source) 
 {
@@ -81,12 +87,13 @@ void StrConcatenate(char* target, char* source)
 
 
 /* =============================================================================
- StrCompare (same as strcmp)
-
- Function : Compare two strings
- Input    : [char*] first string
-            [char*] second string         
- Output   : [boolean] result  
+StrCompare
+Description:
+		Compare two strings
+		(same as strcmp)
+Input:	[char*] first string
+		[char*] second string         
+Output:	[boolean] result  
 ============================================================================= */
 boolean StrCompare(char* string1, char* string2)
 {
@@ -102,14 +109,14 @@ boolean StrCompare(char* string1, char* string2)
 
 
 /* =============================================================================
- LEFT
-
- Function : Returns a section of the source string with the given length
-            Similar as MSX BASIC instruction LEFT$ 
- Input    : [char*] target string
-            [char*] source string
-            [char]  length        
- Output   : -  
+LEFT
+Function:
+		Returns a section of the source string with the given length
+		(Similar as MSX BASIC instruction LEFT$)
+Input:	[char*] target string
+		[char*] source string
+		[char]  length        
+Output:	-  
 ============================================================================= */
 void LEFT(char* target, char* source, char length)
 {
@@ -121,15 +128,15 @@ void LEFT(char* target, char* source, char length)
 
 
 /* =============================================================================
- RIGHT
-
- Function : Returns a section to the right of the source string with the given 
-            length.
-            Similar as MSX BASIC instruction RIGHT$  
- Input    : [char*] target string
-            [char*] source string
-            [char]  length         
- Output   : -  
+RIGHT
+Description:
+		Returns a section to the right of the source string with the given 
+		length.
+		(Similar as MSX BASIC instruction RIGHT$)
+Input:	[char*] target string
+		[char*] source string
+		[char]  length         
+Output:	-  
 ============================================================================= */
 void RIGHT(char* target, char* source, char length)
 {
@@ -149,16 +156,16 @@ void RIGHT(char* target, char* source, char length)
 
 
 /* =============================================================================
- MID
-
- Function : Returns a section of the source string from the given position and 
-            length
-            Similar as MSX BASIC instruction MID$  
- Input    : [char*] target string
-            [char*] source string
-            [char] position
-            [char] length        
- Output   : -  
+MID
+Description:
+		Returns a section of the source string from the given position and 
+		length
+		(Similar as MSX BASIC instruction MID$  )
+Input:	[char*] target string
+		[char*] source string
+		[char] position
+		[char] length        
+Output:	-  
 ============================================================================= */
 void MID(char* target, char* source, char leftPos, char length)
 {
@@ -176,14 +183,14 @@ void MID(char* target, char* source, char leftPos, char length)
 
 
 /* =============================================================================
- INSTR
-
- Function : Find the first occurrence of a character in the given string
-            Similar as MSX BASIC instruction INSTR  
- Input    : [char*] source string
-            [char] ascii code
-            [char] offset        
- Output   : [char] position  
+INSTR
+Description:
+		Find the first occurrence of a character in the given string
+		(Similar as MSX BASIC instruction INSTR)
+Input:	[char*] source string
+		[char] ascii code
+		[char] offset        
+Output:	[char] position  
 ============================================================================= */
 char INSTR(char* source, char asciicode, char offset)
 {
@@ -200,14 +207,14 @@ char INSTR(char* source, char asciicode, char offset)
 
 
 /* =============================================================================
- STRING
-
- Function : Generates a string composed with same char
-            Similar as MSX BASIC instruction STRING$  
- Input    : [char*] target string
-            [char] length
-            [char] asciicode        
- Output   : -  
+STRING
+Description: 
+		Generates a string composed with same char
+		Similar as MSX BASIC instruction STRING$  
+Input:	[char*] target string
+		[char] length
+		[char] asciicode        
+Output:	-  
 ============================================================================= */
 void STRING(char* target, char length, char asciicode) 
 {
@@ -218,13 +225,13 @@ void STRING(char* target, char length, char asciicode)
 
 
 /* =============================================================================
- SPACE
-
- Function : Generates a string composed with spaces
-            Similar as MSX BASIC instruction SPC$ 
- Input    : [char*] target string
-            [char] length        
- Output   : -  
+SPACE
+Description: 
+		Generates a string composed with spaces
+		Similar as MSX BASIC instruction SPC$ 
+Input:	[char*] target string
+		[char] length        
+Output:	-  
 ============================================================================= */
 /*void SPACE(char* target, char length) 
 {
