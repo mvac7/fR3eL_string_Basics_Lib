@@ -23,8 +23,8 @@
 	- [4.8 INSTR](#48-INSTR)
 	- [4.9 STRING](#49-STRING)
 - [5 Code Example](#5-Code-Example)	
-	- [5.1 Example01.c](#51-Example01.c)
-- [6 Author's note](#6-Author's-note)
+	- [5.1 Example01.c](#51-Example01c)
+- [6 Author's note](#6-Authors-note)
 - [7 References](#7-References)
 
 <br/>
@@ -134,8 +134,8 @@ text=`Lorem ipsum dolor sit amet`
 
 #### Example:
 ```c
-	char text[60] = "Lorem ipsum dolor sit amet";	/*The Array must have a minimum size equal
-														  to the sum of the two texts plus one.*/
+	char text[60] = "Lorem ipsum dolor sit amet";	/*The Array where another text will be concatenate must
+													  have a minimum size equal to the sum of the two texts.*/
 	char string1[] = ", consectetur adipiscing elit.";
 	StrConcatenate(text,string1);
 ```
@@ -248,8 +248,8 @@ text=`dolor sit amet`
 <tr><td colspan=3>Find the first occurrence of a character in the given string.<br/>Similar as MSX BASIC instruction INSTR</td></tr>
 <tr><th>Function</th><td colspan=2>char INSTR(source, asciicode, offset)</td></tr>
 <tr><th rowspan=3>Input</th><td>char*</td><td>source string</td></tr>
-<tr><td>char</td><td>ascii code</td></tr>
-<tr><td>char</td><td>offset</td></tr>
+<tr><td>char</td><td>ascii code. Character code to search for.</td></tr>
+<tr><td>char</td><td>offset. Indicates from which position the search begins.</td></tr>
 <tr><th>Output</th><td>char</td><td>position</td></tr>
 </table>
 
@@ -414,11 +414,17 @@ If you're unfamiliar with using Strings in C, you should know that it's difficul
 The only support the language provides for working with Strings is that the compiler translates quoted text into null-terminated Char Array.
 
 Before using this library, I recommend you study how to use Strings in C.
-You can find a wealth of educational material in documents or videos on the internet (see References):
+You can find a wealth of educational material in documents or videos on the internet (see References in this document).
 
 To optimize resources, it only accepts strings with a maximum length of 255 characters, except for the __StrCopy__ and __StrConcatenate__ functions. If you need to work with larger strings, you can change the input values of type __char__ to __unsigned int__.
 
 Remember that if you don't find the functions you need, you can use the C _<string.h>_ standard library.
+
+| Attention! |
+| :---       |
+| Functions access strings through their pointers.<br/>
+Keep in mind that functions that copy or concatenate strings will overflow if not enough space has been reserved in the target strings, 
+which could overwrite other variables. |
 
 <br/>
 
@@ -427,7 +433,7 @@ Remember that if you don't find the functions you need, you can use the C _<stri
 ## 7 References
 
 - Wikipedia · [C String Handling](https://en.wikipedia.org/wiki/C_string_handling)
-- [C Programming](https://en.wikibooks.org/wiki/C_Programming) · [String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
+- Wikibooks · [C Programming](https://en.wikibooks.org/wiki/C_Programming) · [String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)
 - w3schools · [C Strings](https://www.w3schools.com/c/c_strings.php)
 
 
@@ -436,4 +442,4 @@ Remember that if you don't find the functions you need, you can use the C _<stri
 ---
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-nc/4.0/88x31.png) 
-<br/>This document is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/) - (by Wikibooks)
+<br/>This document is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](http://creativecommons.org/licenses/by-nc/4.0/).

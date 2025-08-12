@@ -65,7 +65,7 @@ See the [How to](docs/HOWTO.md) document for more information and examples.
 | StrLength | `StrLength(text)` | `char` | Returns the length of a string |
 | StrCopy | `StrCopy(targetString, sourceString)` | - | Copy the source string on the target string |
 | StrConcatenate | `StrConcatenate(targetString, sourceString)` | - | Appends a copy of the source string to the target string |
-| StrCompare | `StrCompare(string1, string2) ` | `char` or defType `boolean` | Compare two strings |
+| StrCompare | `StrCompare(string1, string2) ` | defined type `boolean` | Compare two strings |
 
 <br/>
 
