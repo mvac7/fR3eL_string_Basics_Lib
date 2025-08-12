@@ -422,9 +422,7 @@ Remember that if you don't find the functions you need, you can use the C _<stri
 
 | Attention! |
 | :---       |
-| Functions access strings through their pointers.<br/>
-Keep in mind that functions that copy or concatenate strings will overflow if not enough space has been reserved in the target strings, 
-which could overwrite other variables. |
+| Functions access strings through their pointers.<br/>Keep in mind that functions that copy or concatenate strings will overflow if not enough space has been reserved in the target strings, which could overwrite other variables. |
 
 <br/>
 
